@@ -1,0 +1,49 @@
+.banner {
+  padding: 0;
+  overflow: hidden;
+  .carousel {
+    width: 100%;
+    display: flex;
+    overflow: visible;
+    flex-wrap: nowrap;
+    transform: translateX(0);
+    transition: all 0.5s linear;
+    .pagination {
+      align-self: center;
+      display: flex;
+      .dot {
+        cursor: pointer;
+        margin: 0 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        &.active {
+          background-color: white;
+        }
+      }
+    }
+    &_item {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 100%;
+      color: white;
+      .title {
+        width: 40%;
+        min-width: 350px;
+        margin: 5% 0 0 0;
+        display: block;
+        font-size: 38px;
+        font-weight: 600;
+        font-family: Proximanova;
+      }
+      .text {
+        display: block;
+        width: 40%;
+        min-width: 350px;
+        margin: 5% 0;
+        flex-grow: 1;
+      }
+    }
+  }
+}

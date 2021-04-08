@@ -1,0 +1,59 @@
+.services {
+  font-family: Montserrat, sans-serif;
+  &_blocks {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .service {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 300px;
+      height: 350px;
+      background: url("../../images/services_background.svg");
+      padding: 60px 35px 20px 35px;
+      &:first-of-type {
+        margin-right: 30px;
+        @media screen and (max-width: 767px) {
+          margin-bottom: 30px;
+          margin-right: 0;
+        }
+      }
+      &_name {
+        text-transform: uppercase;
+        font-size: 25px;
+      }
+      &_desc {
+        text-align: center;
+        font-size: 15px;
+      }
+      &_price {
+        font-size: 24px;
+        font-weight: 600;
+        strong {
+          color: #da3611;
+        }
+      }
+      &_link {
+        align-self: stretch;
+        border: 3px solid #da3611;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 7px;
+        color: #2b2b2b;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+          color: white;
+          background: #da3611;
+          transition: background-color 0.5s, color 0.2s;
+        }
+      }
+    }
+  }
+}

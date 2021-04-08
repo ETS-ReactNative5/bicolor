@@ -28,10 +28,19 @@ import '!file-loader?name=[name].[ext]!./images/favicon.ico';
 import 'file-loader?name=.htaccess!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
+import fontawesome from '@fortawesome/fontawesome';
+import { faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+
 import configureStore from './configureStore';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
+
+// import global styles
+import './global-styles.scss';
+
+fontawesome.library.add(faMapMarkerAlt, faMobileAlt, faEnvelope);
 
 // Create redux store with history
 const initialState = {};

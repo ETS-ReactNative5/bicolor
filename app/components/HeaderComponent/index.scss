@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_logo {
+    height: 53px;
+    margin-right: 50px;
+  }
+  &_city {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 200px;
+    & > span {
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 950px) {
+      flex: 1 1 1px;
+      flex-direction: row;
+      margin-top: 20px;
+      align-items: center;
+      span {
+        margin-right: 20px;
+      }
+    }
+  }
+  &_links {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: 15px;
+    max-width: 800px;
+    a {
+      color: black;
+      text-decoration: none;
+      margin-right: 50px;
+      line-height: 1.5em;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      img {
+        display: none;
+        width: 20px;
+        height: 20px;
+      }
+      &:hover {
+        color: #da3611;
+        border-bottom: 1px solid #da3611;
+        img {
+          position: absolute;
+          display: block;
+          margin-left: -30px;
+        }
+      }
+      @media screen and (max-width: 950px) {
+        margin-right: 20px;
+      }
+    }
+  }
+  &_contacts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    flex: 0 0 240px;
+    &_item {
+      color: #da3611;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 5px;
+      text-align: right;
+      a {
+        color: #da3611;
+        text-decoration: none;
+      }
+    }
+    &_call {
+      align-self: flex-end;
+      border-bottom: 1px dotted #666;
+      color: #666;
+      line-height: 15px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        color: #da3611;
+        border-color: #da3611;
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+    &_links {
+      width: 100%;
+      a {
+        font-size: 14px;
+        flex: 0 0 25%;
+        margin-right: 10px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        white-space: normal;
+      }
+    }
+  }
+}
