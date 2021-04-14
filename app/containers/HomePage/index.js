@@ -12,6 +12,8 @@ import { TechnologyComponent } from '../../components/TechnologyComponent';
 import { WhatYouGetComponent } from '../../components/WhatYouGetComponent';
 import { BannerComponent } from '../../components/BannerComponent';
 import { ServicesComponent } from '../../components/ServicesComponent';
+import { ThreeLayersComponent } from '../../components/ThreeLayersComponent';
+import {ProcessComponent} from "../../components/ProcessComponent";
 
 const cities = {
   irk: {
@@ -41,8 +43,10 @@ export default function HomePage() {
       <HeaderComponent cities={cities} current={city} change={handleChange} />
       <BannerComponent />
       <ServicesComponent />
+      <ThreeLayersComponent />
       <WhatYouGetComponent />
       <TechnologyComponent />
+      <ProcessComponent />
       <ContactsComponent cities={cities} current={city} />
     </>
   );
