@@ -5,7 +5,7 @@
  *
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { HeaderComponent } from '../../components/HeaderComponent';
 import { ContactsComponent } from '../../components/ContactsComponent';
 import { TechnologyComponent } from '../../components/TechnologyComponent';
@@ -13,41 +13,66 @@ import { WhatYouGetComponent } from '../../components/WhatYouGetComponent';
 import { BannerComponent } from '../../components/BannerComponent';
 import { ServicesComponent } from '../../components/ServicesComponent';
 import { ThreeLayersComponent } from '../../components/ThreeLayersComponent';
-import {ProcessComponent} from "../../components/ProcessComponent";
+import { ProcessComponent } from '../../components/ProcessComponent';
 
-const cities = {
-  irk: {
-    name: 'Иркутск',
-    phone: '+7 (914) 945-26-77',
-    address: 'ул Байкальская 261 А/1 Performance Car',
-  },
-  nov: {
-    name: 'Новосибирск',
-    phone: '+7 (383) 375-42-65',
-    address: 'ул.Прокопьевская 3А/1 Dr.Tires колесная мастерская',
-  },
-  kra: {
-    name: 'Красноярск',
-    phone: '+7 (391) 256-77-65',
-    address: 'ул. Башиловская 18, стр. 57',
-  },
-};
+import './index.scss';
+import OrderCallComponent from '../../components/OrderCallComponent';
+import { cities } from '../../consts/cities';
+import ColorsComponent from '../../components/ColorsComponent';
 
-export default function HomePage() {
-  const [city, setCity] = useState('kra');
-  const handleChange = value => {
-    setCity(value);
-  };
+export default function HomePage(props) {
   return (
     <>
-      <HeaderComponent cities={cities} current={city} change={handleChange} />
+      <HeaderComponent
+        cities={cities}
+        current={props.city}
+        change={props.handleChange}
+        openModal={() =>
+          props.setModalForm({
+            show: true,
+            name: '',
+            phone: '',
+            status: 'form',
+          })
+        }
+      />
       <BannerComponent />
       <ServicesComponent />
-      <ThreeLayersComponent />
+      <OrderCallComponent />
+      <ThreeLayersComponent
+        openModal={() =>
+          props.setModalForm({
+            show: true,
+            name: '',
+            phone: '',
+            status: 'form',
+          })
+        }
+      />
+      <ColorsComponent
+        city={props.city}
+        openModal={() =>
+          props.setModalForm({
+            show: true,
+            name: '',
+            phone: '',
+            status: 'form',
+          })
+        }
+      />
       <WhatYouGetComponent />
-      <TechnologyComponent />
+      <TechnologyComponent
+        openModal={() =>
+          props.setModalForm({
+            show: true,
+            name: '',
+            phone: '',
+            status: 'form',
+          })
+        }
+      />
       <ProcessComponent />
-      <ContactsComponent cities={cities} current={city} />
+      <ContactsComponent cities={cities} current={props.city} />
     </>
   );
 }

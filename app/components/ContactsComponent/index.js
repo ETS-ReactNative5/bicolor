@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './index.scss';
 import PropTypes from 'prop-types';
+import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
 export function ContactsComponent(props) {
   return (
@@ -39,7 +40,36 @@ export function ContactsComponent(props) {
             <a href="mailto:bikolor24@gmail.com">bikolor24@gmail.com</a>
           </div>
         </div>
-        <div className="contacts_content_map">Здесь будет карта</div>
+        <div className="map-container">
+          <YMaps>
+            <Map
+              state={{
+                center: props.cities[props.current].position,
+                zoom: 16,
+              }}
+              defaultOptions={{
+                maxZoom: 19,
+                minZoom: 10,
+              }}
+              style={{
+                width: '35vw',
+                minWidth: '300px',
+                height: '22vw',
+                minHeight: '200px',
+              }}
+            >
+              <ZoomControl options={{ float: 'right' }} />
+              {Object.keys(props.cities).map(el => (
+                <Placemark
+                  geometry={props.cities[el].position}
+                  properties={{
+                    hintContent: props.cities[el].address,
+                  }}
+                />
+              ))}
+            </Map>
+          </YMaps>
+        </div>
       </div>
     </section>
   );

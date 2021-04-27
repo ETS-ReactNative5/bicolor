@@ -27,6 +27,7 @@ module.exports = options => ({
           options: options.babelQuery,
         },
       },
+      { test: /\.xlsx$/, loader: 'webpack-xlsx-loader' },
       {
         test: /\.s[ac]ss$/i,
         use: [

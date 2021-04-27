@@ -28,9 +28,10 @@
       flex-direction: column;
       flex: 0 0 100%;
       color: white;
+      max-width: 100%;
       .title {
         width: 40%;
-        min-width: 350px;
+        min-width: 300px;
         margin: 5% 0 0 0;
         display: block;
         font-size: 38px;
@@ -40,9 +41,42 @@
       .text {
         display: block;
         width: 40%;
-        min-width: 350px;
+        min-width: 300px;
         margin: 5% 0;
         flex-grow: 1;
+      }
+      .arrow {
+        position: absolute;
+        height: 100%;
+        margin-top: -40px;
+        cursor: pointer;
+        width: 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 1600px) {
+          margin-top: -40px;
+        }
+        @media screen and (max-width: 1450px) {
+          margin-top: -30px;
+        }
+        @media screen and (max-width: 1300px) {
+          margin-top: -20px;
+        }
+        @media screen and (max-width: 767px) {
+          width: 20px;
+        }
+        &:hover {
+          background: rgba(123, 123, 123, 0.4);
+          transition: background-color 0.5s;
+        }
+        &.right {
+          img {
+            transform: rotate(180deg);
+          }
+        }
       }
     }
   }

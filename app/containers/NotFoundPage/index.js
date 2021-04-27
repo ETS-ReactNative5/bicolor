@@ -6,14 +6,29 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { HeaderComponent } from '../../components/HeaderComponent';
+import { cities } from '../../consts/cities';
+import { ContactsComponent } from '../../components/ContactsComponent';
+import { NotFoundComponent } from '../../components/NotFoundComponent';
 
-import messages from './messages';
-
-export default function NotFound() {
+export default function NotFound(props) {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <>
+      <HeaderComponent
+        cities={cities}
+        current={props.city}
+        change={props.handleChange}
+        openModal={() =>
+          props.setModalForm({
+            show: true,
+            name: '',
+            phone: '',
+            status: 'form',
+          })
+        }
+      />
+      <NotFoundComponent />
+      <ContactsComponent cities={cities} current={props.city} />
+    </>
   );
 }

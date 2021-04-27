@@ -1,0 +1,36 @@
+.not-found {
+  margin-top: 40px;
+  background: url("../../images/404_promo.jpg") no-repeat;
+  background-size: cover;
+  min-height: 32vw;
+  @media screen and (max-width: 1000px) {
+    margin-top: 0;
+  }
+  &_image {
+    max-width: 100%;
+  }
+  &_text {
+    max-width: 400px;
+    color: #e4e4e2;
+    font-family: Motserrat, sans-serif;
+  }
+  &_link {
+    display: block;
+    padding: 13px 27px;
+    margin-top: 20px;
+    border: 2px solid #e4e4e2;
+    width: fit-content;
+    min-width: 300px;
+    text-align: center;
+    color: #e4e4e2;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    &:hover {
+      background: #e4e4e2;
+      color: #2b2b2b;
+      transition: background-color 0.5s, color 0.3s;
+    }
+  }
+}

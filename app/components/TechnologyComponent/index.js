@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import merc from '../../images/mercedes.png';
 import bmw from '../../images/bmw.png';
 import audi from '../../images/audi.png';
 import './index.scss';
 
-export function TechnologyComponent() {
+export function TechnologyComponent(props) {
   return (
     <section className="technology">
       <span className="section-title">Технология</span>
@@ -19,9 +20,13 @@ export function TechnologyComponent() {
         <img src={audi} alt="audi" />
         <img src={bmw} alt="bmw" />
       </div>
-      <button className="more-button" type="button">
+      <button className="more-button" type="button" onClick={props.openModal}>
         Подробнее
       </button>
     </section>
   );
 }
+
+TechnologyComponent.propTypes = {
+  openModal: PropTypes.func,
+};

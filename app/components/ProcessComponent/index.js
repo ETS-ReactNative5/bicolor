@@ -15,6 +15,7 @@ export function ProcessComponent() {
             arrow
             placement="top"
             title="Позвоните нам или закажите звонок через сайт."
+            enterTouchDelay={50}
           >
             <div className="number">1</div>
           </Tooltip>
@@ -25,6 +26,7 @@ export function ProcessComponent() {
           <Tooltip
             arrow
             placement="top"
+            enterTouchDelay={50}
             title="Наш выездной специалист проведёт консультацию и осуществит забор колёс. При желании вы можете оставить автомобиль в нашем боксе."
           >
             <div className="number">2</div>
@@ -36,6 +38,7 @@ export function ProcessComponent() {
           <Tooltip
             arrow
             placement="top"
+            enterTouchDelay={50}
             title="Произведём диагностику и устраним все дефекты, осуществим шиномонтаж."
           >
             <div className="number">3</div>
@@ -47,13 +50,16 @@ export function ProcessComponent() {
           <Tooltip
             arrow
             placement="top"
+            enterTouchDelay={50}
             title="Сотрудник BIKOLOR доставит колеса в отличном виде в оговоренный срок."
           >
             <div className="number">4</div>
           </Tooltip>
         </div>
       </div>
-      <a href="#order_call" className="order">Заказать подбор цвета бесплатно</a>
+      <a href="#order_call" className="order">
+        Заказать подбор цвета бесплатно
+      </a>
     </section>
   );
 }

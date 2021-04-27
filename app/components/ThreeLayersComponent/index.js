@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 import { Button } from '@material-ui/core';
 import first from '../../images/3l/first_layer.png';
@@ -10,7 +11,7 @@ import pointer1 from '../../images/3l/pointer_second.png';
 import pointer2 from '../../images/3l/pointer_first.png';
 import pointer3 from '../../images/3l/pointer_third.png';
 
-export function ThreeLayersComponent() {
+export function ThreeLayersComponent(props) {
   return (
     <section className="three-layers">
       <span className="section-title">Технология 3L</span>
@@ -53,9 +54,17 @@ export function ThreeLayersComponent() {
           </ul>
         </div>
       </div>
-      <Button className="three-layers_button transparent" variant="contained">
+      <Button
+        className="three-layers_button transparent"
+        variant="contained"
+        onClick={props.openModal}
+      >
         Подробнее
       </Button>
     </section>
   );
 }
+
+ThreeLayersComponent.propTypes = {
+  openModal: PropTypes.func,
+};

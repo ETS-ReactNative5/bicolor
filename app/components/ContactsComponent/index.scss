@@ -3,11 +3,17 @@
   color: white;
   padding-top: 40px;
   padding-bottom: 30px;
+  .map-container {
+    margin: 0 auto;
+  }
   &_content {
     display: flex;
-    flex-wrap: wrap;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
     &_contacts {
-      flex: 1 0 300px;
+      flex: 0 0 40vw;
+      margin-right: 20px;
       .item {
         font-size: 40px;
         display: flex;

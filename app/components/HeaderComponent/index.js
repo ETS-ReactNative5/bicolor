@@ -44,7 +44,9 @@ export function HeaderComponent(props) {
             {props.cities[props.current].phone}
           </a>
         </span>
-        <span className="header_contacts_call">Заказать звонок</span>
+        <span className="header_contacts_call" onClick={props.openModal}>
+          Заказать звонок
+        </span>
       </div>
     </section>
   );
@@ -54,4 +56,5 @@ HeaderComponent.propTypes = {
   cities: PropTypes.object,
   current: PropTypes.string,
   change: PropTypes.func,
+  openModal: PropTypes.func,
 };

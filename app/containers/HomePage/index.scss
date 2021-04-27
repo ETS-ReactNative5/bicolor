@@ -1,0 +1,69 @@
+.MuiPaper-root.order-call-modal {
+  padding: 10px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  max-width: 500px;
+  min-width: 300px;
+  background-color: #da3611;
+  color: #e4e4e2;
+  background-image: url("../../images/disk.png");
+  background-position: -100px -100px;
+  margin: 0;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  h3 {
+    align-self: center;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  svg {
+    align-self: flex-end;
+    width: 24px !important;
+    height: auto !important;
+    color: #e4e4e2;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  input, label {
+    color: #2b2b2b !important;
+  }
+  label {
+    z-index: 2;
+    margin-left: 10px;
+    &.MuiInputLabel-shrink {
+      color: #e4e4e2 !important;
+    }
+  }
+  input {
+    background-color: #e4e4e2;
+    border-radius: 3px;
+    padding-left: 15px;
+  }
+  .MuiTextField-root {
+    margin-bottom: 20px;
+  }
+  .MuiInput-underline:before, .MuiInput-underline:after {
+    display: none;
+  }
+  button {
+    background-color: #2b2b2b;
+    color: #e4e4e2;
+    font-weight: 600;
+    align-self: stretch;
+    &:hover {
+      background-color: #e4e4e2;
+      color: #2b2b2b;
+      transition: background-color 0.5s, color 0.2s;
+    }
+  }
+  .success {
+    background-color: #e4e4e2;
+    color: #2b2b2b;
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}

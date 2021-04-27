@@ -29,8 +29,12 @@ import 'file-loader?name=.htaccess!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import fontawesome from '@fortawesome/fontawesome';
-import { faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import {
+  faMapMarkerAlt,
+  faMobileAlt,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFileExcel } from '@fortawesome/free-regular-svg-icons';
 
 import configureStore from './configureStore';
 
@@ -40,7 +44,13 @@ import { translationMessages } from './i18n';
 // import global styles
 import './global-styles.scss';
 
-fontawesome.library.add(faMapMarkerAlt, faMobileAlt, faEnvelope);
+fontawesome.library.add(
+  faMapMarkerAlt,
+  faMobileAlt,
+  faEnvelope,
+  faTimes,
+  faFileExcel,
+);
 
 // Create redux store with history
 const initialState = {};

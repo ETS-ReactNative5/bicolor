@@ -1,6 +1,6 @@
-import banner1 from '../../images/banner_1.jpg';
-import banner2 from '../../images/banner_2.jpeg';
-import banner3 from '../../images/banner_3.jpg';
+import banner1 from '../../images/banner1.jpg';
+import banner2 from '../../images/banner2.jpg';
+import banner3 from '../../images/banner3.jpg';
 
 export const items = [
   {
