@@ -23,6 +23,26 @@
       }
     }
   }
+  &_networks {
+    margin-left: 20px;
+    .icon {
+      color: #2b2b2b;
+      font-size: 24px;
+      &.vk {
+        margin-right: 10px;
+        &:hover {
+          color: #2787F5;
+          transition: color 0.3s;
+        }
+      }
+      &.instagram {
+        &:hover {
+          color: #C13584;
+          transition: color 0.3s;
+        }
+      }
+    }
+  }
   &_links {
     display: flex;
     flex-wrap: nowrap;

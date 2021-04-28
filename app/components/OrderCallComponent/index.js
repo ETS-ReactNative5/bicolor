@@ -5,7 +5,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import './index.scss';
 
 export default function OrderCallComponent() {
-  const [isSent, setSent] = useState(true);
+  const [isSent, setSent] = useState(false);
   const [form, setForm] = useState({
     name: '',
     city: '',

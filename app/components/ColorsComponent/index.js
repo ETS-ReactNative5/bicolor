@@ -48,6 +48,12 @@ export default function ColorsComponent(props) {
       <button type="button" className="open-modal" onClick={props.openModal}>
         Заказать подбор цвета бесплатно
       </button>
+      <span className="instagram-link">
+        Больше работ в нашем{' '}
+        <a target="_blank" href="https://www.instagram.com/bikolor/">
+          Instagram
+        </a>
+      </span>
       <button
         onClick={handlePriceDownload}
         type="button"

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './index.scss';
 import PropTypes from 'prop-types';
 import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
+import { MenuItem, Select } from '@material-ui/core';
 
 export function ContactsComponent(props) {
   return (
@@ -10,6 +11,21 @@ export function ContactsComponent(props) {
       <span className="section-title">Контактная информация</span>
       <div className="contacts_content">
         <div className="contacts_content_contacts">
+          <div className="city-select">
+            <span>Ваш город: </span>
+            <Select
+              value={props.current}
+              onChange={ev => props.change(ev.target.value)}
+            >
+              {Object.keys(props.cities).map(function(el) {
+                return (
+                  <MenuItem key={el} value={el}>
+                    {props.cities[el].name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </div>
           <div className="item location">
             <span className="icon">
               <FontAwesomeIcon icon="map-marker-alt" />
@@ -38,6 +54,22 @@ export function ContactsComponent(props) {
               <FontAwesomeIcon icon={['far', 'envelope']} />
             </span>
             <a href="mailto:bikolor24@gmail.com">bikolor24@gmail.com</a>
+          </div>
+          <div className="item social-networks">
+            <a
+              className="icon vk"
+              target="_blank"
+              href="https://vk.com/club87124090"
+            >
+              <FontAwesomeIcon icon={['fab', 'vk']} />
+            </a>
+            <a
+              className="icon instagram"
+              target="_blank"
+              href="https://www.instagram.com/bikolor/"
+            >
+              <FontAwesomeIcon icon={['fab', 'instagram']} />
+            </a>
           </div>
         </div>
         <div className="map-container">
@@ -78,4 +110,5 @@ export function ContactsComponent(props) {
 ContactsComponent.propTypes = {
   cities: PropTypes.object,
   current: PropTypes.string,
+  change: PropTypes.func,
 };

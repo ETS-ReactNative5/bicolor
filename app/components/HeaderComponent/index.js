@@ -5,6 +5,7 @@ import { Select, MenuItem } from '@material-ui/core';
 import logo from '../../images/logo.png';
 import './index.scss';
 import marker from '../../images/marker.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function HeaderComponent(props) {
   return (
@@ -36,6 +37,22 @@ export function HeaderComponent(props) {
             );
           })}
         </Select>
+      </div>
+      <div className="header_networks">
+        <a
+          className="icon vk"
+          target="_blank"
+          href="https://vk.com/club87124090"
+        >
+          <FontAwesomeIcon icon={['fab', 'vk']} />
+        </a>
+        <a
+          className="icon instagram"
+          target="_blank"
+          href="https://www.instagram.com/bikolor/"
+        >
+          <FontAwesomeIcon icon={['fab', 'instagram']} />
+        </a>
       </div>
       <div className="header_contacts">
         <span className="header_contacts_item">

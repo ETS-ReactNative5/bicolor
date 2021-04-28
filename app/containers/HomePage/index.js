@@ -72,7 +72,11 @@ export default function HomePage(props) {
         }
       />
       <ProcessComponent />
-      <ContactsComponent cities={cities} current={props.city} />
+      <ContactsComponent
+        cities={cities}
+        current={props.city}
+        change={props.handleChange}
+      />
     </>
   );
 }

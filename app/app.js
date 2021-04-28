@@ -35,6 +35,7 @@ import {
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faFileExcel } from '@fortawesome/free-regular-svg-icons';
+import { faVk, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import configureStore from './configureStore';
 
@@ -50,6 +51,8 @@ fontawesome.library.add(
   faEnvelope,
   faTimes,
   faFileExcel,
+  faVk,
+  faInstagram,
 );
 
 // Create redux store with history
