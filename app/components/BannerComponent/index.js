@@ -33,52 +33,47 @@ export function BannerComponent() {
           transform: `translateX(${-100 * (current - 1)}%)`,
         }}
       >
-        {items.map(function(el) {
-          return (
-            <section
-              className="carousel_item"
+        {items.map((el, index) => (
+          <section
+            className="carousel_item"
+            style={{
+              background: `url(${el.img}) no-repeat`,
+              backgroundSize: '100% auto',
+              backgroundPosition: 'center',
+            }}
+            key={el.id}
+          >
+            <span className="title">{el.title}</span>
+            <span className="text">{el.text}</span>
+            <span
+              className="arrow left"
+              onClick={() => changeCurrent(-1)}
               style={{
-                background: `url(${el.img}) no-repeat`,
-                backgroundSize: '100% auto',
-                backgroundPosition: 'center',
+                left: `${100 * (current - 1)}%`,
               }}
-              key={el.id}
             >
-              <span className="title">{el.title}</span>
-              <span className="text">{el.text}</span>
-              <span
-                className="arrow left"
-                onClick={() => changeCurrent(-1)}
-                style={{
-                  left: `${100 * (current - 1)}%`,
-                }}
-              >
-                <img src={arrow} alt="previous" />
-              </span>
-              <span
-                className="arrow right"
-                onClick={() => changeCurrent(1)}
-                style={{
-                  right: `${-100 * (current - 1)}%`,
-                }}
-              >
-                <img src={arrow} alt="previous" />
-              </span>
-              <div className="pagination">
-                {items.map(function(elem, index) {
-                  return (
-                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-                    <span
-                      key={elem.id}
-                      className={`dot ${index + 1 === current ? 'active' : ''}`}
-                      onClick={() => handleChange(index)}
-                    />
-                  );
-                })}
-              </div>
-            </section>
-          );
-        })}
+              <img src={arrow} alt="previous" />
+            </span>
+            <span
+              className="arrow right"
+              onClick={() => changeCurrent(1)}
+              style={{
+                right: `${-100 * (current - 1)}%`,
+              }}
+            >
+              <img src={arrow} alt="previous" />
+            </span>
+            <div className="pagination">
+              {items.map((elem, index) => (
+                <span
+                  key={elem.id}
+                  className={`dot ${index + 1 === current ? 'active' : ''}`}
+                  onClick={() => handleChange(index)}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </section>
   );
