@@ -47,12 +47,7 @@ export default function App() {
       phone: modalForm.phone,
     };
     emailjs
-      .send(
-        'service_b79uysn',
-        'template_5ti3vzs',
-        template,
-        'user_aVpbbdApdRlIAqJaeN3ET',
-      )
+      .send('service_u9nh2d6', 'gmail', template, 'user_WMeCZN1QgdHpppLtqZcZr')
       .then(() => {
         setModalForm({
           show: true,
