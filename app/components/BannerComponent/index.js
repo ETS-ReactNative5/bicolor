@@ -39,8 +39,8 @@ export function BannerComponent() {
               className="carousel_item"
               style={{
                 background: `url(${el.img}) no-repeat`,
-                backgroundSize: '100% auto',
-                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundPosition: 'bottom',
               }}
               key={el.id}
             >

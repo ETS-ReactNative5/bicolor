@@ -29,14 +29,24 @@
       flex: 0 0 100%;
       color: white;
       max-width: 100%;
+      min-height: 40vh;
       .title {
         width: 40%;
         min-width: 300px;
         margin: 5% 0 0 0;
         display: block;
-        font-size: 38px;
+        font-size: 48px;
         font-weight: 600;
         font-family: Proximanova;
+        @media screen and (max-width: 1400px) {
+          font-size: 44px;
+        }
+        @media screen and (max-width: 1000px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 767px) {
+          font-size: 36px;
+        }
       }
       .text {
         display: block;
@@ -44,6 +54,16 @@
         min-width: 300px;
         margin: 5% 0;
         flex-grow: 1;
+        font-size: 24px;
+        @media screen and (max-width: 1400px) {
+          font-size: 22px;
+        }
+        @media screen and (max-width: 1000px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+        }
       }
       .arrow {
         position: absolute;
