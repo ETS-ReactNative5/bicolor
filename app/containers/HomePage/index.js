@@ -19,6 +19,7 @@ import './index.scss';
 import OrderCallComponent from '../../components/OrderCallComponent';
 import { cities } from '../../consts/cities';
 import ColorsComponent from '../../components/ColorsComponent';
+import { CalculatorComponent } from '../../components/CalculatorComponent';
 
 export default function HomePage(props) {
   return (
@@ -27,6 +28,17 @@ export default function HomePage(props) {
         cities={cities}
         current={props.city}
         change={props.handleChange}
+        openModal={() =>
+          props.setModalForm({
+            show: true,
+            name: '',
+            phone: '',
+            status: 'form',
+          })
+        }
+      />
+      <CalculatorComponent
+        city={props.city}
         openModal={() =>
           props.setModalForm({
             show: true,

@@ -1,0 +1,68 @@
+.calculator {
+  &_content {
+    max-width: 600px;
+    margin: 0 auto;
+    .MuiSlider-root {
+      color: #da3611;
+      .MuiSlider-track, .MuiSlider-rail {
+        height: 4px;
+      }
+      .MuiSlider-thumb {
+        width: 16px;
+        height: 16px;
+        margin-top: -6px;
+      }
+      .MuiSlider-valueLabel {
+        left: calc(-50% - 1px);
+      }
+    }
+    .MuiRadio-root {
+      color: #da3611;
+      &.Mui-checked {
+        color: #da3611;
+      }
+    }
+    .form-title {
+      display: block;
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: 600;
+      em {
+        font-size: 28px;
+        color: #da3611;
+        font-style: normal;
+      }
+    }
+    &__summary {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 30px;
+      border: 4px solid #da3611;
+      .price {
+        span {
+          display: block;
+          text-align: center;
+          &.value {
+            font-size: 28px;
+            font-weight: 600;
+            color: #da3611;
+          }
+        }
+      }
+      button {
+        border: 2px solid #da3611;
+        outline: none;
+        background: none;
+        padding: 0 20px;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          background-color: #da3611;
+          color: #e4e4e2;
+          transition: color 0.3s, background-color 0.5s;
+        }
+      }
+    }
+  }
+}
