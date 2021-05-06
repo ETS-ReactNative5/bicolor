@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Select, MenuItem } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../images/logo.png';
 import './index.scss';
 import marker from '../../images/marker.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function HeaderComponent(props) {
   return (
@@ -23,20 +23,31 @@ export function HeaderComponent(props) {
           Правка
         </Link>
       </div>
-      <div className="header_city">
-        <span>Ваш город:</span>
-        <Select
-          value={props.current}
-          onChange={ev => props.change(ev.target.value)}
-        >
-          {Object.keys(props.cities).map(function(el) {
-            return (
-              <MenuItem key={el} value={el}>
-                {props.cities[el].name}
-              </MenuItem>
-            );
-          })}
-        </Select>
+      <div className="header_flex">
+        <div className="header_city">
+          <Select
+            value={props.current}
+            onChange={ev => props.change(ev.target.value)}
+          >
+            {Object.keys(props.cities).map(function(el) {
+              return (
+                <MenuItem key={el} value={el}>
+                  {props.cities[el].name}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </div>
+        <div className="header_contacts">
+          <span className="header_contacts_item">
+            <a href={`tel:${props.cities[props.current].phone}`}>
+              {props.cities[props.current].phone}
+            </a>
+          </span>
+          <span className="header_contacts_call" onClick={props.openModal}>
+            Заказать звонок
+          </span>
+        </div>
       </div>
       <div className="header_networks">
         <a
@@ -53,17 +64,6 @@ export function HeaderComponent(props) {
         >
           <FontAwesomeIcon icon={['fab', 'instagram']} />
         </a>
-      </div>
-      <div className="header_contacts">
-        <span className="header_contacts_item">
-          {props.cities[props.current].name}{' '}
-          <a href={`tel:${props.cities[props.current].phone}`}>
-            {props.cities[props.current].phone}
-          </a>
-        </span>
-        <span className="header_contacts_call" onClick={props.openModal}>
-          Заказать звонок
-        </span>
       </div>
     </section>
   );

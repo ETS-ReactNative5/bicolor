@@ -94,7 +94,7 @@ export default function PokraskaPage(props) {
           долговечность, ударопрочность и резистентность к коррозии.
         </p>
         <h4>Качество, доступное каждому</h4>
-        <img src={threel} alt="three layers" className="block" />
+        <img src={threel} alt="three layers" className="pokraska-page__image" />
         <p>
           Выбирая покраску 3L от BIKOLOR, вы можете не вспоминать о реставрации
           колёсных дисков до 5 лет. Наши специалисты – истинные эксперты своего

@@ -62,7 +62,7 @@ export default function ColorsComponent(props) {
         <em>
           <FontAwesomeIcon icon={['far', 'file-excel']} />
         </em>
-        <strong>Прайс скачать</strong>
+        <strong>ПРАЙС-ЛИСТ</strong>
       </button>
     </section>
   );

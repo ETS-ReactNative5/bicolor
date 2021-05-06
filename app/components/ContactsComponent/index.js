@@ -93,6 +93,7 @@ export function ContactsComponent(props) {
               <ZoomControl options={{ float: 'right' }} />
               {Object.keys(props.cities).map(el => (
                 <Placemark
+                  key={el}
                   geometry={props.cities[el].position}
                   properties={{
                     hintContent: props.cities[el].address,

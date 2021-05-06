@@ -37,7 +37,6 @@
         display: block;
         font-size: 48px;
         font-weight: 600;
-        font-family: Proximanova;
         @media screen and (max-width: 1400px) {
           font-size: 44px;
         }
@@ -47,6 +46,7 @@
         @media screen and (max-width: 767px) {
           font-size: 36px;
         }
+        font-family: Motserrat, Arial, sans-serif;;
       }
       .text {
         display: block;
