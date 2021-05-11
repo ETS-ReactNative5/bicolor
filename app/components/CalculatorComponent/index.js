@@ -44,6 +44,22 @@ export const CalculatorComponent = props => {
     <section className="calculator">
       <span className="section-title">Калькулятор стоимости</span>
       <div className="calculator_content">
+        <span className="form-title">Ваш город:</span>
+        <RadioGroup
+          aria-label="city"
+          name="city"
+          value={props.city}
+          row
+          onChange={(ev, value) => props.changeCity(value)}
+        >
+          {Object.keys(props.cities).map(el => (
+            <FormControlLabel
+              value={el}
+              control={<Radio />}
+              label={props.cities[el].name}
+            />
+          ))}
+        </RadioGroup>
         <span className="form-title">
           Размер диска: <em>{params.size}''</em>
         </span>
@@ -95,7 +111,39 @@ export const CalculatorComponent = props => {
           <button
             className="order-button"
             type="submit"
-            onClick={props.openModal}
+            onClick={() => {
+              props.openModal({
+                show: true,
+                name: '',
+                phone: '',
+                status: 'form',
+                size: params.size,
+                amount: (function() {
+                  switch (params.amount) {
+                    case 'one':
+                      return '1 шт';
+                    case 'two':
+                      return '2 шт';
+                    case 'three':
+                      return '3 шт';
+                    case 'four':
+                      return '4 шт';
+                    default:
+                      return '';
+                  }
+                })(),
+                colors: (function() {
+                  switch (params.colors) {
+                    case 'solo':
+                      return 'одноцветкая';
+                    case 'double':
+                      return 'двухцветная';
+                    default:
+                      return '';
+                  }
+                })(),
+              });
+            }}
           >
             Записаться на покраску
           </button>

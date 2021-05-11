@@ -18,9 +18,45 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Dialog } from '@material-ui/core';
+import MaskedInput from 'react-text-mask/dist/reactTextMask';
+import PropTypes from 'prop-types';
 import PravkaPage from '../PravkaPage';
 import PokraskaPage from '../PokraskaPage';
 import GlobalStyle from '../../global-styles';
+
+const TextMaskCustom = props => {
+  const { inputRef, ...other } = props;
+
+  return (
+    <MaskedInput
+      {...other}
+      ref={inputRef}
+      mask={[
+        '+',
+        '7',
+        '-',
+        /\d/,
+        /\d/,
+        /\d/,
+        '-',
+        /\d/,
+        /\d/,
+        /\d/,
+        '-',
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+      ]}
+      placeholderChar="_"
+      showMask={false}
+    />
+  );
+};
+
+TextMaskCustom.propTypes = {
+  inputRef: PropTypes.func.isRequired,
+};
 
 export default function App() {
   const [city, setCity] = useState('kra');
@@ -43,8 +79,8 @@ export default function App() {
   const handleFormSubmit = ev => {
     ev.preventDefault();
     const template = {
-      name: modalForm.name,
-      phone: modalForm.phone,
+      ...modalForm,
+      city,
     };
     emailjs
       .send('service_u9nh2d6', 'gmail', template, 'user_WMeCZN1QgdHpppLtqZcZr')
@@ -70,7 +106,9 @@ export default function App() {
       >
         <FontAwesomeIcon
           icon={['fas', 'times']}
-          onClick={() => setModalForm({ show: false, name: '', phone: '' })}
+          onClick={() =>
+            setModalForm({ show: false, name: '', phone: '', status: 'form' })
+          }
         />
         {modalForm.status === 'form' && (
           <form onSubmit={handleFormSubmit}>
@@ -84,12 +122,15 @@ export default function App() {
               required
             />
             <TextField
-              value={modalForm.phone}
-              label="Телефон"
-              placeholder="Пример: 8 999 999 9999"
               id="phone"
-              onChange={handleFormChange}
+              label="Номер телефона"
+              placeholder="Введите номер телефона"
               required
+              InputProps={{
+                inputComponent: TextMaskCustom,
+                value: modalForm.phone,
+                onChange: handleFormChange,
+              }}
             />
             <Button type="submit" variant="contained">
               Заказать звонок

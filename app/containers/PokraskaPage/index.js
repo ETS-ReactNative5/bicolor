@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './index.scss';
 import '../HomePage/index.scss';
 import { HeaderComponent } from '../../components/HeaderComponent';
@@ -9,6 +9,9 @@ import threel from '../../images/3l/text.png';
 import { cities } from '../../consts/cities';
 
 export default function PokraskaPage(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeaderComponent

@@ -39,14 +39,9 @@ export default function HomePage(props) {
       />
       <CalculatorComponent
         city={props.city}
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
+        cities={cities}
+        changeCity={props.handleChange}
+        openModal={props.setModalForm}
       />
       <BannerComponent />
       <ServicesComponent />

@@ -1,13 +1,12 @@
-import banner1 from '../../images/banner1.jpg';
-import banner2 from '../../images/banner2.jpg';
-import banner3 from '../../images/banner3.jpg';
+import banner1 from '../../images/banner1.png';
+import banner2 from '../../images/banner2.png';
+import banner3 from '../../images/banner3.png';
 
 export const items = [
   {
     id: 1,
     img: banner1,
-    title:
-      'Прогрессивная технология покраски дисков для тех, кто ценит своё авто',
+    title: 'Заводская технология покраски',
     text:
       'Обращаясь к нам, вы получаете покрытие оригинального качества и 100% попадание в заводской цвет. ' +
       'Наша технология, не имеющая аналогов в России, обеспечивает максимальную долговечность результата',
