@@ -37,12 +37,6 @@ export default function HomePage(props) {
           })
         }
       />
-      <CalculatorComponent
-        city={props.city}
-        cities={cities}
-        changeCity={props.handleChange}
-        openModal={props.setModalForm}
-      />
       <BannerComponent />
       <ServicesComponent />
       <OrderCallComponent />
@@ -79,6 +73,12 @@ export default function HomePage(props) {
         }
       />
       <ProcessComponent />
+      <CalculatorComponent
+        city={props.city}
+        cities={cities}
+        changeCity={props.handleChange}
+        openModal={props.setModalForm}
+      />
       <ContactsComponent
         cities={cities}
         current={props.city}
