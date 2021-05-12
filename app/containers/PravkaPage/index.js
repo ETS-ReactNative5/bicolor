@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../HomePage/index.scss';
 import '../PokraskaPage/index.scss';
 import { HeaderComponent } from '../../components/HeaderComponent';
@@ -8,6 +8,9 @@ import image from '../../images/pravka1.jpg';
 import { cities } from '../../consts/cities';
 
 export default function PravkaPage(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeaderComponent
