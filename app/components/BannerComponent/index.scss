@@ -29,9 +29,12 @@
       flex: 0 0 100%;
       color: white;
       max-width: 100%;
-      min-height: 40vh;
+      min-height: 55vh;
       .title {
-        width: 40%;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 2px;
+        width: 50%;
         min-width: 300px;
         margin: 5% 0 0 0;
         display: block;
@@ -50,7 +53,10 @@
       }
       .text {
         display: block;
-        width: 40%;
+        width: 50%;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 2px;
         min-width: 300px;
         margin: 5% 0;
         flex-grow: 1;

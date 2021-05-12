@@ -54,6 +54,7 @@ export const CalculatorComponent = props => {
         >
           {Object.keys(props.cities).map(el => (
             <FormControlLabel
+              key={el}
               value={el}
               control={<Radio />}
               label={props.cities[el].name}
