@@ -39,7 +39,7 @@ export function BannerComponent() {
             style={{
               background: `url(${el.img}) no-repeat`,
               backgroundSize: 'cover',
-              backgroundPosition: 'bottom',
+              backgroundPosition: 'left bottom',
             }}
             key={el.id}
           >

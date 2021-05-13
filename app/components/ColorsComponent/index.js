@@ -1,16 +1,10 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
-import xlsx from 'xlsx';
 import PropTypes from 'prop-types';
 import { colors } from './consts';
 import './index.scss';
-import { cities } from '../../consts/cities';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ColorsComponent(props) {
-  const handlePriceDownload = () => {
-    xlsx.writeFile(cities[props.city].price, `${props.city}_price.xlsx`);
-  };
   return (
     <section className="colors">
       <span className="section-title">Цветовые решения</span>
@@ -54,16 +48,6 @@ export default function ColorsComponent(props) {
           Instagram
         </a>
       </span>
-      <button
-        onClick={handlePriceDownload}
-        type="button"
-        className="price-button"
-      >
-        <em>
-          <FontAwesomeIcon icon={['far', 'file-excel']} />
-        </em>
-        <strong>ПРАЙС-ЛИСТ</strong>
-      </button>
     </section>
   );
 }
