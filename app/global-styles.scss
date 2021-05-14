@@ -7,7 +7,7 @@ section {
     padding: 30px 12% 50px 12%;
   }
   @media screen and (max-width: 1300px) {
-    padding: 20px 5% 40px 5%;
+    padding: 20px 5% 20px 5%;
   }
   .section-title {
     margin-top: 25px;
@@ -29,5 +29,13 @@ section {
         font-size: 22px;
       }
     }
+  }
+}
+
+.page-container {
+  margin-top: 93px;
+
+  @media screen and (max-width: 950px) {
+    margin-top: 191px;
   }
 }

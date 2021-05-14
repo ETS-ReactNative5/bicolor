@@ -37,53 +37,55 @@ export default function HomePage(props) {
           })
         }
       />
-      <BannerComponent />
-      <ServicesComponent />
-      <OrderCallComponent />
-      <ThreeLayersComponent
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
-      />
-      <ColorsComponent
-        city={props.city}
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
-      />
-      <WhatYouGetComponent />
-      <TechnologyComponent
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
-      />
-      <ProcessComponent />
-      <CalculatorComponent
-        city={props.city}
-        cities={cities}
-        changeCity={props.handleChange}
-        openModal={props.setModalForm}
-      />
-      <ContactsComponent
-        cities={cities}
-        current={props.city}
-        change={props.handleChange}
-      />
+      <div className="page-container">
+        <BannerComponent />
+        <ServicesComponent />
+        <OrderCallComponent />
+        <ThreeLayersComponent
+          openModal={() =>
+            props.setModalForm({
+              show: true,
+              name: '',
+              phone: '',
+              status: 'form',
+            })
+          }
+        />
+        <ColorsComponent
+          city={props.city}
+          openModal={() =>
+            props.setModalForm({
+              show: true,
+              name: '',
+              phone: '',
+              status: 'form',
+            })
+          }
+        />
+        <WhatYouGetComponent />
+        <TechnologyComponent
+          openModal={() =>
+            props.setModalForm({
+              show: true,
+              name: '',
+              phone: '',
+              status: 'form',
+            })
+          }
+        />
+        <ProcessComponent />
+        <CalculatorComponent
+          city={props.city}
+          cities={cities}
+          changeCity={props.handleChange}
+          openModal={props.setModalForm}
+        />
+        <ContactsComponent
+          cities={cities}
+          current={props.city}
+          change={props.handleChange}
+        />
+      </div>
     </>
   );
 }
