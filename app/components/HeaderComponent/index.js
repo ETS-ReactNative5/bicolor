@@ -9,7 +9,7 @@ import marker from '../../images/marker.png';
 
 export function HeaderComponent(props) {
   return (
-    <section className="header">
+    <div className="header">
       <Link to="/">
         <img src={logo} alt="logo" className="header_logo" />
       </Link>
@@ -65,7 +65,7 @@ export function HeaderComponent(props) {
           <FontAwesomeIcon icon={['fab', 'instagram']} />
         </a>
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -15,6 +15,9 @@ export const ExamplesComponent = props => {
           </div>
         ))}
       </Carousel>
+      <a target="_blank" href="https://www.instagram.com/bikolor/">
+        Больше работ в нашем Instagram
+      </a>
     </section>
   );
 };

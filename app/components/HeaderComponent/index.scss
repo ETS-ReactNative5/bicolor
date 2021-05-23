@@ -1,4 +1,20 @@
 .header {
+  padding: 20px 18%;
+  @media screen and (max-width: 1600px) {
+    padding: 20px 15%;
+  }
+  @media screen and (max-width: 1450px) {
+    padding: 20px 12%;
+  }
+  @media screen and (max-width: 1300px) {
+    padding: 20px 5%;
+  }
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: #eeeeee;
   display: flex;
   justify-content: space-between;
   align-items: center;

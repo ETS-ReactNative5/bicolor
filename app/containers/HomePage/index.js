@@ -38,58 +38,60 @@ export default function HomePage(props) {
           })
         }
       />
-      <BannerComponent />
-      <ServicesComponent />
-      <OrderCallComponent />
-      <ThreeLayersComponent
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
-      />
-      <ColorsComponent
-        city={props.city}
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
-        colors={props.sheets.colors ? props.sheets.colors.elements : []}
-      />
-      <ExamplesComponent
-        examples={props.sheets.examples ? props.sheets.examples.elements : []}
-      />
-      <WhatYouGetComponent />
-      <TechnologyComponent
-        openModal={() =>
-          props.setModalForm({
-            show: true,
-            name: '',
-            phone: '',
-            status: 'form',
-          })
-        }
-      />
-      <ProcessComponent />
-      <CalculatorComponent
-        info={props.sheets}
-        city={props.city}
-        cities={cities}
-        changeCity={props.handleChange}
-        openModal={props.setModalForm}
-      />
-      <ContactsComponent
-        cities={cities}
-        current={props.city}
-        change={props.handleChange}
-      />
+      <div className="page-container">
+        <BannerComponent />
+        <ServicesComponent />
+        <OrderCallComponent />
+        <ThreeLayersComponent
+          openModal={() =>
+            props.setModalForm({
+              show: true,
+              name: '',
+              phone: '',
+              status: 'form',
+            })
+          }
+        />
+        <ColorsComponent
+          city={props.city}
+          openModal={() =>
+            props.setModalForm({
+              show: true,
+              name: '',
+              phone: '',
+              status: 'form',
+            })
+          }
+          colors={props.sheets.colors ? props.sheets.colors.elements : []}
+        />
+        <WhatYouGetComponent />
+        <TechnologyComponent
+          openModal={() =>
+            props.setModalForm({
+              show: true,
+              name: '',
+              phone: '',
+              status: 'form',
+            })
+          }
+        />
+        <ProcessComponent />
+        <ExamplesComponent
+          examples={props.sheets.examples ? props.sheets.examples.elements : []}
+        />
+        <CalculatorComponent
+          city={props.city}
+          cities={cities}
+          changeCity={props.handleChange}
+          openModal={props.setModalForm}
+          info={props.sheets}
+        />
+        <ContactsComponent
+          cities={cities}
+          current={props.city}
+          change={props.handleChange}
+        />
+      </div>
     </>
   );
 }

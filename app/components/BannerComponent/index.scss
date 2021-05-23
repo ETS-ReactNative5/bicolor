@@ -9,6 +9,7 @@
     transform: translateX(0);
     transition: all 0.5s linear;
     .pagination {
+      margin-top: auto;
       align-self: center;
       display: flex;
       .dot {
@@ -59,7 +60,7 @@
         border-radius: 2px;
         min-width: 300px;
         margin: 5% 0;
-        flex-grow: 1;
+        //flex-grow: 1;
         font-size: 24px;
         @media screen and (max-width: 1400px) {
           font-size: 22px;

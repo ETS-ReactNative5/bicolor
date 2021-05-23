@@ -14,7 +14,7 @@ export function ServicesComponent() {
             оборудовании.
           </p>
           <span className="service_price">
-            Цена от: <strong>700 &#8381;</strong>
+            Цена от: <strong>700</strong>
           </span>
           <Link className="service_link" to="/pravka">
             Подробнее
@@ -24,7 +24,7 @@ export function ServicesComponent() {
           <span className="service_name">Покраска</span>
           <p className="service_desc">Покраска дисков по технологии 3L.</p>
           <span className="service_price">
-            Цена от: <strong>1500 &#8381;</strong>
+            Цена от: <strong>2000</strong>
           </span>
           <Link className="service_link" to="/pokraska">
             Подробнее
