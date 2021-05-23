@@ -7,7 +7,7 @@
  *
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 
@@ -20,6 +20,7 @@ import Button from '@material-ui/core/Button';
 import { Dialog } from '@material-ui/core';
 import MaskedInput from 'react-text-mask/dist/reactTextMask';
 import PropTypes from 'prop-types';
+import Tabletop from 'tabletop';
 import PravkaPage from '../PravkaPage';
 import PokraskaPage from '../PokraskaPage';
 import GlobalStyle from '../../global-styles';
@@ -66,6 +67,16 @@ export default function App() {
     phone: '',
     status: 'form',
   });
+  const [sheets, setSheets] = useState({});
+  useEffect(() => {
+    Tabletop.init({
+      key: '1ViLxN9d0n7yZyVkkUrFBLjP36ceRaiboT9YHsp5K24g',
+      simpleSheet: false,
+      callback: googleData => {
+        setSheets(googleData);
+      },
+    });
+  }, []);
   const handleChange = value => {
     setCity(value);
   };
@@ -154,6 +165,7 @@ export default function App() {
               city={city}
               handleChange={handleChange}
               setModalForm={setModalForm}
+              sheets={sheets}
             />
           )}
         />

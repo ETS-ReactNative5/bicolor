@@ -20,6 +20,7 @@ import OrderCallComponent from '../../components/OrderCallComponent';
 import { cities } from '../../consts/cities';
 import ColorsComponent from '../../components/ColorsComponent';
 import { CalculatorComponent } from '../../components/CalculatorComponent';
+import { ExamplesComponent } from '../../components/Examples';
 
 export default function HomePage(props) {
   return (
@@ -60,6 +61,10 @@ export default function HomePage(props) {
             status: 'form',
           })
         }
+        colors={props.sheets.colors ? props.sheets.colors.elements : []}
+      />
+      <ExamplesComponent
+        examples={props.sheets.examples ? props.sheets.examples.elements : []}
       />
       <WhatYouGetComponent />
       <TechnologyComponent
@@ -74,6 +79,7 @@ export default function HomePage(props) {
       />
       <ProcessComponent />
       <CalculatorComponent
+        info={props.sheets}
         city={props.city}
         cities={cities}
         changeCity={props.handleChange}

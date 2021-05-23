@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Tabletop from 'tabletop';
 import Slider from '@material-ui/core/Slider';
 import './index.scss';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -7,7 +6,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 
 export const CalculatorComponent = props => {
-  const [info, setInfo] = useState({});
   const [params, setParams] = useState({
     size: 13,
     amount: 'four',
@@ -17,24 +15,14 @@ export const CalculatorComponent = props => {
   const [price, setPrice] = useState('');
 
   useEffect(() => {
-    Tabletop.init({
-      key: '1ViLxN9d0n7yZyVkkUrFBLjP36ceRaiboT9YHsp5K24g',
-      simpleSheet: false,
-      callback: googleData => {
-        setInfo(googleData);
-      },
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!info[props.city]) return;
-    if (!info[props.city].elements) return;
+    if (!props.info[props.city]) return;
+    if (!props.info[props.city].elements) return;
     setRow(
-      info[props.city].elements.find(
+      props.info[props.city].elements.find(
         el => parseInt(el.size, 10) === params.size,
       ),
     );
-  }, [params.size, info, props.city]);
+  }, [params.size, props.info, props.city]);
 
   useEffect(() => {
     const field = `${params.amount}_${params.colors}`;

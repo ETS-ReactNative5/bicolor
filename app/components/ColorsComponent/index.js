@@ -1,19 +1,19 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
 import PropTypes from 'prop-types';
-import { colors } from './consts';
 import './index.scss';
 
 export default function ColorsComponent(props) {
+  if (!props.colors) return '';
   return (
     <section className="colors">
       <span className="section-title">Цветовые решения</span>
       {document.documentElement.clientWidth > 767 && (
         <Carousel itemsToScroll={3} itemsToShow={3}>
-          {colors.map(el => (
+          {props.colors.map(el => (
             <div className="color" key={el.id}>
-              <img src={el.image} alt={el.name} />
-              <span>{el.name}</span>
+              <img src={el.image} alt={el.title} />
+              <span>{el.title}</span>
             </div>
           ))}
         </Carousel>
@@ -21,20 +21,20 @@ export default function ColorsComponent(props) {
       {document.documentElement.clientWidth <= 767 &&
         document.documentElement.clientWidth > 500 && (
         <Carousel itemsToScroll={1} itemsToShow={2}>
-          {colors.map(el => (
+          {props.colors.map(el => (
             <div className="color" key={el.id}>
-              <img src={el.image} alt={el.name} />
-              <span>{el.name}</span>
+              <img src={el.image} alt={el.title} />
+              <span>{el.title}</span>
             </div>
           ))}
         </Carousel>
       )}
       {document.documentElement.clientWidth <= 500 && (
         <Carousel itemsToScroll={1} itemsToShow={1}>
-          {colors.map(el => (
+          {props.colors.map(el => (
             <div className="color" key={el.id}>
-              <img src={el.image} alt={el.name} />
-              <span>{el.name}</span>
+              <img src={el.image} alt={el.title} />
+              <span>{el.title}</span>
             </div>
           ))}
         </Carousel>
