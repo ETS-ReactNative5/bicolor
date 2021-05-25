@@ -5,24 +5,18 @@ import arrow from '../../images/arrow.svg';
 
 export function BannerComponent() {
   const [current, setCurrent] = useState(1);
-  const [interval, setIntervalId] = useState(0);
   const handleChange = number => {
-    clearInterval(interval);
     setCurrent(number + 1);
   };
 
-  useEffect(function() {
-    const id = setInterval(timer, 3000);
-    setIntervalId(id);
-  }, []);
-
-  const timer = () => {
-    const currentId = current;
-    setCurrent(currentId + 1);
-  };
+  useEffect(
+    function() {
+      setTimeout(() => setCurrent((current + 1) % 3 || 3), 7000);
+    },
+    [current],
+  );
 
   const changeCurrent = delta => {
-    clearInterval(interval);
     setCurrent((current + delta) % 3 || 3);
   };
   return (
