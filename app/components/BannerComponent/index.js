@@ -4,6 +4,7 @@ import './index.scss';
 import arrow from '../../images/arrow.svg';
 
 export function BannerComponent() {
+  const [timeoutId, setTimoutId] = useState(null);
   const [current, setCurrent] = useState(1);
   const handleChange = number => {
     setCurrent(number + 1);
@@ -11,7 +12,9 @@ export function BannerComponent() {
 
   useEffect(
     function() {
-      setTimeout(() => setCurrent((current + 1) % 3 || 3), 7000);
+      clearTimeout(timeoutId);
+      const id = setTimeout(() => setCurrent((current + 1) % 3 || 3), 10000);
+      setTimoutId(id);
     },
     [current],
   );
