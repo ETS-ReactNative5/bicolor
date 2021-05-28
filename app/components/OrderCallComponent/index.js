@@ -22,12 +22,7 @@ export default function OrderCallComponent() {
     ev.preventDefault();
     setLoading(true);
     emailjs
-      .send(
-        'service_b79uysn',
-        'template_tn0im3e',
-        form,
-        'user_aVpbbdApdRlIAqJaeN3ET',
-      )
+      .send('service_u9nh2d6', 'gmail', form, 'user_WMeCZN1QgdHpppLtqZcZr')
       .then(() => {
         setForm({
           name: '',
