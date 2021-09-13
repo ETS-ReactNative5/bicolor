@@ -24,6 +24,7 @@ import Tabletop from 'tabletop';
 import PravkaPage from '../PravkaPage';
 import PokraskaPage from '../PokraskaPage';
 import GlobalStyle from '../../global-styles';
+import { parseGoogleSheet } from '../../utils/parseGoogleSheet';
 
 const TextMaskCustom = props => {
   const { inputRef, ...other } = props;
@@ -69,12 +70,38 @@ export default function App() {
   });
   const [sheets, setSheets] = useState({});
   useEffect(() => {
-    Tabletop.init({
-      key: '1ViLxN9d0n7yZyVkkUrFBLjP36ceRaiboT9YHsp5K24g',
-      simpleSheet: false,
-      callback: googleData => {
-        setSheets(googleData);
-      },
+    const listId = '1ViLxN9d0n7yZyVkkUrFBLjP36ceRaiboT9YHsp5K24g';
+    const apiKey = 'AIzaSyBtgoIkE1xhmcTzhIwqFWVROMYUpP0r-BU';
+    fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${listId}?key=${apiKey}`,
+    ).then(response => {
+      if (response.ok) {
+        response.json().then(data => {
+          const sheetsList = data.sheets.reduce(
+            (acc, el) => [...acc, el.properties.title],
+            [],
+          );
+          fetch(
+            `https://sheets.googleapis.com/v4/spreadsheets/${listId}/values:batchGet?key=${apiKey}${sheetsList
+              .map(el => `&ranges=${el}`)
+              .join('')}`,
+          ).then(resp => {
+            if (resp.ok) {
+              resp.json().then(allData => {
+                setSheets(
+                  allData.valueRanges.reduce(
+                    (acc, el) => ({
+                      ...acc,
+                      ...parseGoogleSheet(el),
+                    }),
+                    {},
+                  ),
+                );
+              });
+            }
+          });
+        });
+      }
     });
   }, []);
   const handleChange = value => {
