@@ -44,8 +44,8 @@ export default function ColorsComponent(props) {
       </button>
       <span className="instagram-link">
         Больше работ в нашем{' '}
-        <a target="_blank" href="https://www.instagram.com/bikolor/">
-          Instagram
+        <a target="_blank" href="https://t.me/BIKOLOR">
+          Telegram
         </a>
       </span>
     </section>

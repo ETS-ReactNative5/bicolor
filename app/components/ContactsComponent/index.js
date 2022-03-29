@@ -4,6 +4,7 @@ import './index.scss';
 import PropTypes from 'prop-types';
 import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 import { MenuItem, Select } from '@material-ui/core';
+import telegram from '../../images/telegram-white.svg';
 
 export function ContactsComponent(props) {
   return (
@@ -66,9 +67,9 @@ export function ContactsComponent(props) {
             <a
               className="icon instagram"
               target="_blank"
-              href="https://www.instagram.com/bikolor/"
+              href="https://t.me/BIKOLOR"
             >
-              <FontAwesomeIcon icon={['fab', 'instagram']} />
+              <img src={telegram} className="icon-image" alt="telegram" />
             </a>
           </div>
         </div>

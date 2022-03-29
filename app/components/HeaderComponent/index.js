@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../images/logo.png';
 import './index.scss';
 import marker from '../../images/marker.png';
+import telegram from '../../images/telegram-black.svg';
 
 export function HeaderComponent(props) {
   return (
@@ -60,9 +61,9 @@ export function HeaderComponent(props) {
         <a
           className="icon instagram"
           target="_blank"
-          href="https://www.instagram.com/bikolor/"
+          href="https://t.me/BIKOLOR"
         >
-          <FontAwesomeIcon icon={['fab', 'instagram']} />
+          <img src={telegram} className="icon-image" alt="telegram" />
         </a>
       </div>
     </div>
